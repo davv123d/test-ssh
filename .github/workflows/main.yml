@@ -23,7 +23,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "."
-        target: "/home/ubuntu"
+        target: "/home/ubuntu/back_web"
 
        
     
