@@ -1,12 +1,7 @@
 
 name: My-GitHubActions-Basics
 
-env:
-  
-  
-  DEPLOY_PACKAGE_NAME       : "back_web_${{ github.sha }}.zip"
-  
-on: 
+on:
   push:
     branches: 
       - main
@@ -18,12 +13,20 @@ jobs:
     steps:
     - name: Git clone our repo
       uses: actions/checkout@v2
+    
+    - name: Copy file via scp
+      uses: appleboy/scp-action@master
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+      with:
+        source: "."
+        target: "/home/ubuntu"
+
        
-    - name: Create ZIP deployment package
-      run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
-      
-    - name: List current folder
-      run : ls -la
+    
               
     
   
