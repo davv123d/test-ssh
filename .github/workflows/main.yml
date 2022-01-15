@@ -25,7 +25,14 @@ jobs:
         source: "."
         target: "/home/ubuntu/back_web"
 
-       
+    - name: Executing remote  command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: sudo mv ~/back_web/* /var/www/html/ 
     
               
     
