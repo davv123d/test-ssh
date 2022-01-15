@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Print Hello Message in Testing
-      run : echo "Hello World from Testing job"
+      run : echo "Hello World from Testing job1"
     
     - name: Execure few commands
       run : |
