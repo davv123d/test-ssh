@@ -24,6 +24,9 @@ jobs:
         api_key: |
           ${{ secrets.OCI_API_KEY }}
         verbose: true
+    - run: cat ~/.oci/config
+
+    - run: oci -v   
     
     - name: Copy file via scp
       uses: appleboy/scp-action@master
