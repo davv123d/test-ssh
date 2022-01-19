@@ -8,3 +8,29 @@
     api_key: |
       ${{ secrets.OCI_API_KEY }}
     verbose: true
+- name: Install oci-cli
+      uses: bytesbay/oci-cli-action@v1.0.2
+      with:
+        user: "${{ secrets.OCI_USER }}"
+        fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
+        tenancy: "${{ secrets.OCI_TENANCY }}"
+        region: "${{ secrets.OCI_REGION }}"
+        api_key: |
+          ${{ secrets.OCI_API_KEY }}
+        verbose: true
+    - run: cat ~/.oci/config
+
+    - run: oci -v
+oci os ns get
+oci os bucket list -ns frigrynu3nkr --compartment-id $C
+oci iam compartment list -c $T
+oci os bucket create --compartment-id $C  --name test16012022
+oci os object bulk-upload --bucket-name test16012022 --src-dir ~/back_web
+oci os object list --bucket-name test16012022
+oci os object sync --bn test16012022 --src-dir .
+
+
+    
+
+    
+ 
