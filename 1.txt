@@ -8,7 +8,13 @@
     api_key: |
       ${{ secrets.OCI_API_KEY }}
     verbose: true
+<<<<<<< HEAD
 - name: Install oci-cli
+=======
+    
+    
+    - name: Install oci-cli
+>>>>>>> e4d68bc0491fe8c33554fc7afe5b84cde2293cc0
       uses: bytesbay/oci-cli-action@v1.0.2
       with:
         user: "${{ secrets.OCI_USER }}"
@@ -21,6 +27,7 @@
     - run: cat ~/.oci/config
 
     - run: oci -v
+<<<<<<< HEAD
 oci os ns get
 oci os bucket list -ns frigrynu3nkr --compartment-id $C
 oci iam compartment list -c $T
@@ -34,3 +41,5 @@ oci os object sync --bn test16012022 --src-dir .
 
     
  
+=======
+>>>>>>> e4d68bc0491fe8c33554fc7afe5b84cde2293cc0
