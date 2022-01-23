@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 ojiuh
 hjlk
 
+=======
+ojiuh 2
+>>>>>>> 1f93c16af2b07fea9befc928276cf169f5ea7bb7
